@@ -1,0 +1,4 @@
+[run]
+source = sn3218
+omit =
+    .tox/*
