@@ -2,6 +2,7 @@
 -----
 
 * BREAKING: Port to class.
+* Legacy support for module methods, auto-instantiates a class
 
 1.2.7
 -----
