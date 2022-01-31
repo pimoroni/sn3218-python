@@ -10,6 +10,8 @@ CMD_ENABLE_LEDS = 0x13
 CMD_UPDATE = 0x16
 CMD_RESET = 0x17
 
+_sn3218 = None  # For module compatibiity shim
+
 
 class SN3218:
     def __init__(self, i2c_bus=0, enable_mask=0b111111111111111111):
@@ -106,3 +108,36 @@ class SN3218:
 
         self.i2c.write_i2c_block_data(I2C_ADDRESS, CMD_SET_PWM_VALUES, values)
         self.i2c.write_i2c_block_data(I2C_ADDRESS, CMD_UPDATE, [0xFF])
+
+
+# Module-method compatibility shim
+
+def _get_sn3218():
+    global _sn3218
+    if _sn3218 is None:
+        _sn3218 = SN3218()
+    return _sn3218
+
+
+def enable():
+    _get_sn3218().enable()
+
+
+def output(values):
+    _get_sn3218().output(values)
+
+
+def output_raw(values):
+    _get_sn3218().output_raw(values)
+
+
+def channel_gamma(channel, gamma_table):
+    _get_sn3218().enable()
+
+
+def enable_leds(enable_mask):
+    _get_sn3218().enable_leds(enable_mask)
+
+
+def reset():
+    _get_sn3218().reset()
