@@ -142,7 +142,7 @@ def output_raw(values):
 
 
 def channel_gamma(channel, gamma_table):
-    _get_sn3218().enable()
+    _get_sn3218().channel_gamma(channel, gamma_table)
 
 
 def enable_leds(enable_mask):
