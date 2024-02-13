@@ -35,8 +35,7 @@ classifiers = [
     "Topic :: System :: Hardware",
 ]
 dependencies = [
-    "smbus",
-    "RPi.GPIO"
+    "smbus2"
 ]
 
 [project.urls]

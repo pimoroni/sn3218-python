@@ -14,20 +14,6 @@ def sn3218():
 @pytest.fixture(scope='function', autouse=False)
 def smbus():
     """Mock smbus module."""
-    sys.modules['smbus'] = mock.MagicMock()
-    yield sys.modules['smbus']
-    del sys.modules['smbus']
-
-
-@pytest.fixture(scope='function', autouse=False)
-def gpio():
-    """Mock RPi.GPIO module."""
-    GPIO = mock.MagicMock()
-
-    # Fudge for Python < 37 (possibly earlier)
-    sys.modules['RPi'] = mock.Mock()
-    sys.modules['RPi'].GPIO = GPIO
-    sys.modules['RPi.GPIO'] = GPIO
-    yield GPIO
-    del sys.modules['RPi']
-    del sys.modules['RPi.GPIO']
+    sys.modules['smbus2'] = mock.MagicMock()
+    yield sys.modules['smbus2']
+    del sys.modules['smbus2']

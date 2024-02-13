@@ -1,5 +1,3 @@
-from smbus import SMBus
-
 __version__ = '2.0.0'
 
 
@@ -14,15 +12,9 @@ _sn3218 = None  # For module compatibiity shim
 
 
 class SN3218:
-    def __init__(self, i2c_bus=None, i2c_dev=None, enable_mask=0b111111111111111111):
+    def __init__(self, i2c_bus=1, i2c_dev=None, enable_mask=0b111111111111111111):
         if i2c_dev is None:
-            if i2c_bus is None:
-                import RPi.GPIO as GPIO
-                if GPIO.RPI_REVISION < 2:
-                    i2c_bus = 0
-                else:
-                    i2c_bus = 1
-
+            from smbus2 import SMBus
             self.i2c = SMBus(i2c_bus)
         else:
             self.i2c = i2c_dev
