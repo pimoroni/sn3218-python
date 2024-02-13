@@ -38,7 +38,7 @@
 1.2.1
 -----
 
-* Removed hard dependancy upon SMbus, added message at runtime
+* Removed hard dependency upon SMbus, added message at runtime
 
 1.0.0
 -----
