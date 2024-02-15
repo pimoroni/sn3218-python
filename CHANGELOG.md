@@ -1,3 +1,9 @@
+3.0.0
+-----
+
+* BREAKING: Remove RPi.GPIO and bus autodetect
+* BREAKING: Switch to smbus2
+
 2.0.0
 -----
 
