@@ -26,4 +26,3 @@ Latest/development library from GitHub:
 * `git clone https://github.com/pimoroni/sn3218-python`
 * `cd sn3218-python`
 * `./install.sh --unstable`
-

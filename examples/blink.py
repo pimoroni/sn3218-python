@@ -12,5 +12,3 @@ while True:
     lights.output([state] * 18)
     state = not state
     time.sleep(1.0)
-
-
