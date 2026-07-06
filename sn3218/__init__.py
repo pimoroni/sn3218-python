@@ -8,7 +8,7 @@ CMD_ENABLE_LEDS = 0x13
 CMD_UPDATE = 0x16
 CMD_RESET = 0x17
 
-_sn3218 = None  # For module compatibiity shim
+_sn3218 = None  # For module compatibility shim
 
 
 class SN3218:
